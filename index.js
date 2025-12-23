@@ -429,8 +429,155 @@ const tagsData = [
         category: "Concepts",
         desc: "How elements occupy space on the page.",
         syntax: "&lt;div style='background:salmon; padding:5px; margin-bottom:5px; color:white;'&gt;\n  I am Block (starts new line)\n&lt;/div&gt;\n&lt;span style='background:lightblue; padding:2px; color:black;'&gt;\n  I am Inline\n&lt;/span&gt;\n&lt;span style='background:lightgreen; padding:2px; color:black;'&gt;\n  Me too\n&lt;/span&gt;",
-        preview: "<div style='background:salmon; padding:5px; margin-bottom:5px; color:white;'>I am Block (starts new line)</div><span style='background:lightblue; padding:2px; color:black;'>I am Inline</span> <span style='background:lightgreen; padding:2px; color:black;'>Me too</span>",
         explanation: "<b>Block</b> elements (like &lt;div&gt;) take up the full width and start a new line. <b>Inline</b> elements (like &lt;span&gt;) only take as much width as they need and stay on the same line."
+    }
+];
+
+// --- CSS Data ---
+const cssData = [
+    {
+        name: "color",
+        category: "Text Styling",
+        desc: "Sets the color of the text.",
+        syntax: "p { color: red; }",
+        preview: "<p style='color: red;'>This text is red.</p>",
+        explanation: "Changes the text color. You can use names (red), hex codes (#ff0000), or rgb values."
+    },
+    {
+        name: "background-color",
+        category: "Backgrounds",
+        desc: "Sets the background color of an element.",
+        syntax: "div { background-color: yellow; }",
+        preview: "<div style='background-color: yellow; padding: 10px;'>Yellow Background</div>",
+        explanation: "Paints the background of the box."
+    },
+    {
+        name: "background",
+        category: "Backgrounds",
+        desc: "Shorthand property for setting all background style properties.",
+        syntax: "div { background: lightblue url('img.png') no-repeat fixed center; }",
+        preview: "<div style='background: lightblue; padding: 10px;'>Shorthand Background</div>",
+        explanation: "A quick way to set color, image, repeat, etc. all at once."
+    },
+    {
+        name: "font-size",
+        category: "Typography",
+        desc: "Sets the size of the font.",
+        syntax: "p { font-size: 20px; }",
+        preview: "<p style='font-size: 20px;'>Big Text (20px)</p>",
+        explanation: "Controls how big the text is. Pixels (px) are common, but 'rem' is better for accessibility."
+    },
+    {
+        name: "font-family",
+        category: "Typography",
+        desc: "Specifies the font for an element.",
+        syntax: "p { font-family: 'Courier New', monospace; }",
+        preview: "<p style='font-family: \"Courier New\", monospace;'>Typewriter Font</p>",
+        explanation: "The typeface used. Always provides a fallback list."
+    },
+    {
+        name: "font-weight",
+        category: "Typography",
+        desc: "Sets how thick or thin characters in text should be displayed.",
+        syntax: "p { font-weight: bold; }",
+        preview: "<p style='font-weight: bold;'>Bold Text</p>",
+        explanation: "Use 'bold' or numbers like 400 (normal) and 700 (bold)."
+    },
+    {
+        name: "font-style",
+        category: "Typography",
+        desc: "Specifies the font style for a text (e.g. italic).",
+        syntax: "p { font-style: italic; }",
+        preview: "<p style='font-style: italic;'>Italic Text</p>",
+        explanation: "Mostly used to make text italic."
+    },
+    {
+        name: "text-align",
+        category: "Typography",
+        desc: "Specifies the horizontal alignment of text in an element.",
+        syntax: "div { text-align: center; }",
+        preview: "<div style='text-align: center; border: 1px solid #ccc;'>Centered Text</div>",
+        explanation: "Aligns text to left, right, center, or justify."
+    },
+    {
+        name: "padding",
+        category: "Box Model",
+        desc: "Sets the padding area of an element (space inside).",
+        syntax: "div { padding: 20px; }",
+        preview: "<div style='background: #a3b18a; padding: 20px; color:white;'>I have padding</div>",
+        explanation: "Space INSIDE the border, between the content and the edge."
+    },
+    {
+        name: "margin",
+        category: "Box Model",
+        desc: "Sets the margin area of an element (space outside).",
+        syntax: "div { margin: 20px; }",
+        preview: "<div style='background: #ccc; display:inline-block;'>Box</div><div style='background: salmon; margin-left: 20px; display:inline-block;'>Box with Margin</div>",
+        explanation: "Space OUTSIDE the border, pushing other elements away."
+    },
+    {
+        name: "border",
+        category: "Box Model",
+        desc: "Sets the border around an element.",
+        syntax: "div { border: 2px solid black; }",
+        preview: "<div style='border: 2px solid black; padding: 5px;'>I have a border</div>",
+        explanation: "The line around the box. Needs width, style, and color."
+    },
+    {
+        name: "border-radius",
+        category: "Box Model",
+        desc: "Defines the radius of the element's corners.",
+        syntax: "div { border-radius: 10px; }",
+        preview: "<div style='background: #588157; color:white; padding:10px; border-radius: 10px;'>Rounded Corners</div>",
+        explanation: "Rounds the sharp corners of a box."
+    },
+    {
+        name: "width / height",
+        category: "Box Model",
+        desc: "Sets the width and height of an element.",
+        syntax: "div { width: 100px; height: 50px; }",
+        preview: "<div style='width: 100px; height: 50px; background: blue; color: white;'>100x50</div>",
+        explanation: "Controls the size of the element."
+    },
+    {
+        name: "display",
+        category: "Layout",
+        desc: "Specifies the display behavior (the type of rendering box) of an element.",
+        syntax: "div { display: inline-block; }",
+        preview: "<span>Start</span> <div style='display: inline-block; background: orange; padding: 5px;'>Inline Block</div> <span>End</span>",
+        explanation: "Key layout property. Common values: block, inline, inline-block, flex, grid, none."
+    },
+    {
+        name: "position",
+        category: "Layout",
+        desc: "Specifies the type of positioning method used for an element.",
+        syntax: "div { position: relative; top: 10px; }",
+        preview: "<div style='background:#eee; height:40px;'><div style='background:red; width:20px; height:20px; position:relative; top:10px; left:10px;'></div></div>",
+        explanation: "static (default), relative, absolute, fixed, or sticky."
+    },
+    {
+        name: "background-size",
+        category: "Backgrounds",
+        desc: "Specifies the size of the background images.",
+        syntax: "div { background-size: cover; }",
+        preview: "<div style='width:100px; height:60px; border:1px solid #333; background: url(https://via.placeholder.com/20) no-repeat; background-size: cover;'></div>",
+        explanation: "cover, contain, or specific pixel values."
+    },
+    {
+        name: "background-position",
+        category: "Backgrounds",
+        desc: "Sets the starting position of a background image.",
+        syntax: "div { background-position: center; }",
+        preview: "<div style='width:100px; height:60px; border:1px solid #333; background: url(https://via.placeholder.com/20) no-repeat; background-position: center;'></div>",
+        explanation: "center, top, bottom, left, right."
+    },
+    {
+        name: "background-repeat",
+        category: "Backgrounds",
+        desc: "Sets if/how a background image will be repeated.",
+        syntax: "div { background-repeat: no-repeat; }",
+        preview: "<div style='width:100px; height:60px; border:1px solid #333; background: url(https://via.placeholder.com/20) repeat-x;'></div>",
+        explanation: "repeat (default), repeat-x, repeat-y, no-repeat."
     }
 ];
 
@@ -439,15 +586,30 @@ const tagListContainer = document.getElementById('tag-list');
 const contentDisplay = document.getElementById('content-display');
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.querySelector('.sidebar');
+const navHtml = document.getElementById('nav-html');
+const navCss = document.getElementById('nav-css');
+
+let currentMode = 'html'; // 'html' or 'css'
 
 // Function: Initialize the App
 function init() {
-    renderSidebar();
     setupEventListeners();
+    switchMode('html'); // Initialize with HTML mode
 }
 
 // Function: Set up global event listeners
 function setupEventListeners() {
+    // Mode Switching
+    navHtml.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchMode('html');
+    });
+
+    navCss.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchMode('css');
+    });
+
     // Mobile Menu Toggle
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
@@ -472,14 +634,47 @@ function setupEventListeners() {
     });
 }
 
+function switchMode(mode) {
+    currentMode = mode;
+
+    // Update Nav UI
+    if (mode === 'html') {
+        navHtml.classList.add('active');
+        navCss.classList.remove('active');
+    } else {
+        navHtml.classList.remove('active');
+        navCss.classList.add('active');
+    }
+
+    // Reset view
+    renderSidebar();
+
+    // Reset Content Area
+    if (mode === 'html') {
+        contentDisplay.innerHTML = `
+            <h2>Welcome to HTML Basics!</h2>
+            <p>Select a tag from the sidebar to learn more about it.</p>
+            <div class="instruction-arrow">← Start here</div>`;
+    } else {
+        contentDisplay.innerHTML = `
+            <h2>Welcome to CSS Basics!</h2>
+            <p>Select a property from the sidebar to learn style.</p>
+            <div class="instruction-arrow">← Start here</div>`;
+    }
+}
+
 // Function: Build Sidebar from Data
 function renderSidebar() {
     tagListContainer.innerHTML = ""; // Clear existing
 
-    tagsData.forEach(tag => {
+    // Choose data source based on mode
+    const data = currentMode === 'html' ? tagsData : cssData;
+
+    data.forEach(item => {
         const li = document.createElement('li');
         li.className = "tag-item";
-        li.textContent = "<" + tag.name + ">"; // Display as <tag>
+        li.textContent = item.name; // Display name
+        if (currentMode === 'html') li.textContent = "<" + item.name + ">";
 
         // Add click event
         li.addEventListener('click', () => {
@@ -489,7 +684,7 @@ function renderSidebar() {
             li.classList.add('active');
 
             // Generate content
-            loadTagContent(tag);
+            loadContent(item);
 
             // On mobile, close sidebar after selection
             if (window.innerWidth <= 768) {
@@ -502,24 +697,24 @@ function renderSidebar() {
     });
 }
 
-// Function: Display Tag Content
-function loadTagContent(tag) {
+// Function: Display Content
+function loadContent(item) {
     const htmlContent = `
         <div class="card">
-            <h1 class="tag-title">&lt;${tag.name}&gt;</h1>
-            <p class="tag-desc">${tag.desc}</p>
+            <h1 class="tag-title">${currentMode === 'html' ? '&lt;' + item.name + '&gt;' : item.name}</h1>
+            <p class="tag-desc">${item.desc}</p>
             
             <h3 class="section-title">Beginner Explanation</h3>
-            <p>${tag.explanation}</p>
+            <p>${item.explanation}</p>
             
             <h3 class="section-title">Syntax Example</h3>
             <div class="code-block">
-                <pre>${tag.syntax}</pre>
+                <pre>${item.syntax}</pre>
             </div>
             
             <h3 class="section-title">Live Preview</h3>
             <div class="preview-box">
-                ${tag.preview}
+                ${item.preview}
             </div>
         </div>
     `;
