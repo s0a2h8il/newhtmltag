@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML Basics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Learn HTML Basics</div>
+        <button id="menu-toggle" class="menu-btn" aria-label="Toggle Navigation">☰ Menu</button>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h3>Tags</h3>
+            <ul id="tag-list">
+                <!-- Tag items will be injected here by JS -->
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div id="content-display">
+                <h2>Welcome to HTML Basics!</h2>
+                <p>Select a tag from the sidebar to learn more about it.</p>
+                <div class="instruction-arrow">← Start here</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
