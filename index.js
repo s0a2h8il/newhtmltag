@@ -209,6 +209,153 @@ const tagsData = [
         syntax: "&lt;link rel='stylesheet' href='style.css'&gt;",
         preview: "<div style='background:#ddd; padding:10px; text-align:center; color:#555;'>[Invisible Tag] <br> Loads style.css or icons in the background.</div>",
         explanation: "You don't see this on the page. It goes in the &lt;head&gt; to tell the browser to load things like your style sheet."
+    },
+
+    // --- Forms & Inputs ---
+    {
+        name: "form",
+        category: "Forms",
+        desc: "The &lt;form&gt; element represents a document section containing interactive controls for submitting information.",
+        syntax: "&lt;form action='/submit'&gt;\n  &lt;!-- inputs go here --&gt;\n&lt;/form&gt;",
+        preview: "<form style='border:1px dashed #333; padding:10px;'>Form Container</form>",
+        explanation: "The wrapper for all your input fields. It handles sending the data to the server."
+    },
+    {
+        name: "button",
+        category: "Forms",
+        desc: "The &lt;button&gt; element is a clickable button.",
+        syntax: "&lt;button&gt;Click Me&lt;/button&gt;",
+        preview: "<button style='padding:5px 10px;'>I am a Button</button>",
+        explanation: "A standard clickable button. Can submit forms or trigger JavaScript."
+    },
+    {
+        name: "select / option",
+        category: "Forms",
+        desc: "New dropdown menu. &lt;select&gt; creates the list, &lt;option&gt; items.",
+        syntax: "&lt;select&gt;\n  &lt;option&gt;A&lt;/option&gt;\n  &lt;option&gt;B&lt;/option&gt;\n&lt;/select&gt;",
+        preview: "<select><option>Option 1</option><option>Option 2</option></select>",
+        explanation: "Creates a dropdown list for users to choose from."
+    },
+    {
+        name: "input type='text'",
+        category: "Forms",
+        desc: "Standard single-line text input.",
+        syntax: "&lt;input type='text' placeholder='Name'&gt;",
+        preview: "<input type='text' placeholder='Type name here'>",
+        explanation: "The most basic input field for text."
+    },
+    {
+        name: "input type='password'",
+        category: "Forms",
+        desc: "Text input that hides characters.",
+        syntax: "&lt;input type='password'&gt;",
+        preview: "<input type='password' placeholder='Password'>",
+        explanation: "Hides what you type with dots or asterisks."
+    },
+    {
+        name: "input type='email'",
+        category: "Forms",
+        desc: "Input for email addresses. Validates format.",
+        syntax: "&lt;input type='email'&gt;",
+        preview: "<input type='email' placeholder='user@example.com'>",
+        explanation: "Looks like text, but on mobile it shows the '@' key."
+    },
+    {
+        name: "input type='number'",
+        category: "Forms",
+        desc: "Input for numeric values.",
+        syntax: "&lt;input type='number' min='1' max='10'&gt;",
+        preview: "<input type='number' placeholder='123'>",
+        explanation: "Only accepts numbers. Often has up/down spinner arrows."
+    },
+    {
+        name: "input type='date'",
+        category: "Forms",
+        desc: "Date picker widget.",
+        syntax: "&lt;input type='date'&gt;",
+        preview: "<input type='date'>",
+        explanation: "Pops up a calendar to pick a date."
+    },
+    {
+        name: "input type='checkbox'",
+        category: "Forms",
+        desc: "A tick box for binary choices.",
+        syntax: "&lt;input type='checkbox' id='c'&gt; &lt;label for='c'&gt;Check me&lt;/label&gt;",
+        preview: "<input type='checkbox'> Check me",
+        explanation: "For 'yes/no' options. You can select multiple checkboxes."
+    },
+    {
+        name: "input type='radio'",
+        category: "Forms",
+        desc: "Radio button for selecting one option from a set.",
+        syntax: "&lt;input type='radio' name='g'&gt; A &lt;input type='radio' name='g'&gt; B",
+        preview: "<input type='radio' name='grp'> Option A <input type='radio' name='grp'> Option B",
+        explanation: "Like checkboxes, but you can only pick ONE from the group."
+    },
+    {
+        name: "input type='color'",
+        category: "Forms",
+        desc: "A color picker.",
+        syntax: "&lt;input type='color'&gt;",
+        preview: "<input type='color'>",
+        explanation: "Opens the system color palette."
+    },
+    {
+        name: "input type='range'",
+        category: "Forms",
+        desc: "A slider control.",
+        syntax: "&lt;input type='range' min='0' max='100'&gt;",
+        preview: "<input type='range'>",
+        explanation: "A slider to dragging select a value within a range."
+    },
+    {
+        name: "input type='file'",
+        category: "Forms",
+        desc: "File upload selector.",
+        syntax: "&lt;input type='file'&gt;",
+        preview: "<input type='file'>",
+        explanation: "Lets the user choose a file from their computer."
+    },
+    {
+        name: "input type='search'",
+        category: "Forms",
+        desc: "Text field optimized for search.",
+        syntax: "&lt;input type='search'&gt;",
+        preview: "<input type='search' placeholder='Search...'>",
+        explanation: "Like text, but may have a clear (X) button."
+    },
+    {
+        name: "input type='url'",
+        category: "Forms",
+        desc: "Input for web addresses.",
+        syntax: "&lt;input type='url'&gt;",
+        preview: "<input type='url' placeholder='https://...'>",
+        explanation: "Validates that the text is a link."
+    },
+    {
+        name: "input type='tel'",
+        category: "Forms",
+        desc: "Input for telephone numbers.",
+        syntax: "&lt;input type='tel'&gt;",
+        preview: "<input type='tel' placeholder='123-456-7890'>",
+        explanation: "Brings up the number pad on mobile keyboards."
+    },
+    // Adding remaining types from request: submit, reset, month, week, fieldset/legend (implied by context usually but good to have)
+    {
+        name: "input type='submit'",
+        category: "Forms",
+        desc: "Submit button for forms.",
+        syntax: "&lt;input type='submit' value='Send'&gt;",
+        preview: "<input type='submit' value='Submit Form'>",
+        explanation: "A button that submits the form data."
+    },
+    {
+        name: "input type='reset'",
+        category: "Forms",
+        desc: "Reset button for forms.",
+        syntax: "&lt;input type='reset' value='Clear'&gt;",
+        preview: "<input type='reset' value='Reset Form'>",
+        explanation: "A button that clears all form inputs."
     }
 ];
 
