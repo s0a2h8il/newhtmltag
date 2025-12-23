@@ -578,6 +578,72 @@ const cssData = [
         syntax: "div { background-repeat: no-repeat; }",
         preview: "<div style='width:100px; height:60px; border:1px solid #333; background: url(https://via.placeholder.com/20) repeat-x;'></div>",
         explanation: "repeat (default), repeat-x, repeat-y, no-repeat."
+    },
+
+    // --- Advanced / Components ---
+    {
+        name: "Box Model",
+        category: "Concepts",
+        desc: "The foundation of layout: Margin + Border + Padding + Content.",
+        syntax: "/* No specific tag, it's a concept */\ndiv {\n  width: 100px;\n  padding: 20px;\n  border: 5px solid black;\n  margin: 20px;\n}",
+        preview: "<div style='background:salmon; padding:20px; border:5px solid #333; width:fit-content; margin:10px;'>\n  Content\n</div>\n<small>The space around content is padding. The line is border. Outside is margin.</small>",
+        explanation: "Every element is a box. Understanding this model is key to spacing things correctly."
+    },
+    {
+        name: "CSS Grid",
+        category: "Layout",
+        desc: "A 2D layout system for the web.",
+        syntax: ".container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 10px;\n}",
+        preview: "<div style='display:grid; grid-template-columns: 1fr 1fr; gap:10px; background:#eee; padding:5px;'>\n  <div style='background:hotpink; padding:10px;'>1</div>\n  <div style='background:cyan; padding:10px;'>2</div>\n  <div style='background:yellow; padding:10px;'>3</div>\n  <div style='background:lime; padding:10px;'>4</div>\n</div>",
+        explanation: "Grid makes it easy to design complex web layouts with rows and columns."
+    },
+    {
+        name: "Navbar (List)",
+        category: "Components",
+        desc: "Creating a navigation bar using a list.",
+        syntax: "ul {\n  list-style: none;\n  padding: 0;\n  display: flex;\n  gap: 10px;\n}\nli { background: #333; color: white; padding: 5px 10px; }",
+        preview: "<ul style='list-style:none; padding:0; display:flex; gap:10px; margin:0;'>\n  <li style='background:#333; color:white; padding:5px 10px;'>Home</li>\n  <li style='background:#333; color:white; padding:5px 10px;'>About</li>\n  <li style='background:#333; color:white; padding:5px 10px;'>Contact</li>\n</ul>",
+        explanation: "We remove the bullets (list-style: none) and use Flexbox to make them sit side-by-side."
+    },
+    {
+        name: "Card Creation",
+        category: "Components",
+        desc: "A common UI pattern for grouping information.",
+        syntax: ".card {\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n  padding: 16px;\n  text-align: center;\n  background-color: white;\n}",
+        preview: "<div style='box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); padding: 16px; text-align: center; background-color: white; border-radius:8px; max-width:200px;'>\n  <img src='https://via.placeholder.com/50' style='border-radius:50%;'>\n  <h3>Jane Doe</h3>\n  <p>Architect & Engineer</p>\n</div>",
+        explanation: "Cards use shadows, padding, and borders to create a contained 'unit' of content."
+    },
+    {
+        name: "Dropdown Menu",
+        category: "Components",
+        desc: "A hovering menu created with pure CSS.",
+        syntax: ".dropdown:hover .content { display: block; }",
+        preview: "<div style='position:relative; display:inline-block;'>\n  <button style='background:#4CAF50; color:white; padding:10px; border:none;'>Hover Me</button>\n  <div style='display:none; position:absolute; background:#f9f9f9; min-width:120px; box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2); padding:10px; z-index:1;'>\n    <p>Link 1</p>\n    <p>Link 2</p>\n    <p>Link 3</p>\n  </div>\n</div>\n<style>\n  /* CSS Magic injected for demo */\n  div:hover > div { display: block !important; }\n</style>",
+        explanation: "We use the :hover pseudo-class to change the inner menu from 'display: none' to 'display: block'."
+    },
+    {
+        name: "Website Layout",
+        category: "Components",
+        desc: "A basic header-content-footer skeleton.",
+        syntax: "/* Flexbox Layout */\n.page { display: flex; flex-direction: column; height: 100px; }",
+        preview: "<div style='display:flex; flex-direction:column; border:1px solid #333; height:150px;'>\n  <header style='background:#ccc; padding:10px;'>Header</header>\n  <main style='flex:1; background:#fff; padding:10px;'>Main Content</main>\n  <footer style='background:#ccc; padding:10px;'>Footer</footer>\n</div>",
+        explanation: "A simple way to stick a footer to the bottom and have the main area fill the space."
+    },
+    {
+        name: "CSS Loader",
+        category: "Components",
+        desc: "A spinning loader animation.",
+        syntax: "@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }\n.loader { border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 20px; height: 20px; animation: spin 2s linear infinite; }",
+        preview: "<style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>\n<div style='border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite;'></div>",
+        explanation: "Uses CSS Animations (@keyframes) to rotate a circle with a different colored border section."
+    },
+    {
+        name: "Pagination",
+        category: "Components",
+        desc: "Links to navigate between pages.",
+        syntax: ".page-link { display: inline-block; padding: 8px 16px; border: 1px solid #ddd; }",
+        preview: "<div style='display:inline-block;'>\n  <a href='#' style='padding:8px 16px; border:1px solid #ddd; text-decoration:none; color:black;'>&laquo;</a>\n  <a href='#' style='padding:8px 16px; border:1px solid #ddd; background-color:#4CAF50; color:white; text-decoration:none;'>1</a>\n  <a href='#' style='padding:8px 16px; border:1px solid #ddd; text-decoration:none; color:black;'>2</a>\n  <a href='#' style='padding:8px 16px; border:1px solid #ddd; text-decoration:none; color:black;'>&raquo;</a>\n</div>",
+        explanation: "A series of links styled to look like buttons."
     }
 ];
 
@@ -704,16 +770,16 @@ function loadContent(item) {
             <h1 class="tag-title">${currentMode === 'html' ? '&lt;' + item.name + '&gt;' : item.name}</h1>
             <p class="tag-desc">${item.desc}</p>
             
-            <h3 class="section-title">Beginner Explanation</h3>
-            <p>${item.explanation}</p>
+            <h3 class="section-title">Syntax Example (Editable)</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.8;">Edit the code below and click "Run Code" to see changes.</p>
             
-            <h3 class="section-title">Syntax Example</h3>
-            <div class="code-block">
-                <pre>${item.syntax}</pre>
+            <div class="code-block" style="border-left:none; padding:0;">
+                <textarea id="code-editor" class="code-editor" spellcheck="false">${item.preview}</textarea>
+                <button id="run-btn" class="run-btn">▶ Run Code</button>
             </div>
             
             <h3 class="section-title">Live Preview</h3>
-            <div class="preview-box">
+            <div class="preview-box" id="live-preview-box">
                 ${item.preview}
             </div>
         </div>
@@ -723,6 +789,24 @@ function loadContent(item) {
 
     // Smooth scroll content area to top
     contentDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Add Event Listener for the "Run Code" button
+    const runBtn = document.getElementById('run-btn');
+    const editor = document.getElementById('code-editor');
+    const previewBox = document.getElementById('live-preview-box');
+
+    if (runBtn && editor && previewBox) {
+        runBtn.addEventListener('click', () => {
+            // Take value from textarea and inject into preview
+            previewBox.innerHTML = editor.value;
+
+            // Visual feedback
+            previewBox.style.opacity = '0.5';
+            setTimeout(() => {
+                previewBox.style.opacity = '1';
+            }, 200);
+        });
+    }
 }
 
 // Start the App
