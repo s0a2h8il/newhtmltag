@@ -774,6 +774,7 @@ function loadContent(item) {
             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.8;">Edit the code below and click "Run Code" to see changes.</p>
             
             <div class="code-block" style="border-left:none; padding:0;">
+                <button id="copy-btn" class="copy-btn">Copy</button>
                 <textarea id="code-editor" class="code-editor" spellcheck="false">${item.preview}</textarea>
                 <button id="run-btn" class="run-btn">▶ Run Code</button>
             </div>
@@ -790,12 +791,14 @@ function loadContent(item) {
     // Smooth scroll content area to top
     contentDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Add Event Listener for the "Run Code" button
+    // Add Event Listeners
     const runBtn = document.getElementById('run-btn');
+    const copyBtn = document.getElementById('copy-btn');
     const editor = document.getElementById('code-editor');
     const previewBox = document.getElementById('live-preview-box');
 
     if (runBtn && editor && previewBox) {
+        // Run Code
         runBtn.addEventListener('click', () => {
             // Take value from textarea and inject into preview
             previewBox.innerHTML = editor.value;
@@ -806,6 +809,21 @@ function loadContent(item) {
                 previewBox.style.opacity = '1';
             }, 200);
         });
+
+        // Copy Code
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(editor.value).then(() => {
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied!';
+                    copyBtn.style.background = 'rgba(88, 129, 87, 0.8)';
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                        copyBtn.style.background = '';
+                    }, 2000);
+                });
+            });
+        }
     }
 }
 
