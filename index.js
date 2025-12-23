@@ -1,12 +1,14 @@
 // Data Source for all HTML Tags
 // This object acts as our "database" for the tutorial content.
+// UPDATED: Syntax blocks now closely match the Live Preview content for clarity.
+
 const tagsData = [
     // --- Layout Tags ---
     {
         name: "header",
         category: "Structure",
         desc: "The &lt;header&gt; element represents introductory content, typically a group of introductory or navigational aids.",
-        syntax: "&lt;header&gt;\n  &lt;h1&gt;Page Title&lt;/h1&gt;\n&lt;/header&gt;",
+        syntax: "&lt;header style='background:#f0f0f0; padding:10px;'&gt;\n  &lt;h1&gt;My Website Header&lt;/h1&gt;\n&lt;/header&gt;",
         preview: "<header style='background:#f0f0f0; padding:10px;'><h1>My Website Header</h1></header>",
         explanation: "Think of this as the top banner of your webpage. It usually contains the logo and main navigation."
     },
@@ -14,15 +16,15 @@ const tagsData = [
         name: "main",
         category: "Structure",
         desc: "The &lt;main&gt; element represents the dominant content of the &lt;body&gt; of a document.",
-        syntax: "&lt;main&gt;\n  &lt;p&gt;This is the unique content...&lt;/p&gt;\n&lt;/main&gt;",
-        preview: "<main style='border:1px dashed #333; padding:10px;'><p>This represents the main content area of the page.</p></main>",
+        syntax: "&lt;main style='border:1px dashed #333; padding:10px;'&gt;\n  &lt;p&gt;Main content area...&lt;/p&gt;\n&lt;/main&gt;",
+        preview: "<main style='border:1px dashed #333; padding:10px;'><p>Main content area...</p></main>",
         explanation: "This is where the 'meat' of your page goes. It holds the core information unique to that specific page."
     },
     {
         name: "footer",
         category: "Structure",
         desc: "The &lt;footer&gt; element represents a footer for its nearest sectioning content or sectioning root element.",
-        syntax: "&lt;footer&gt;\n  &lt;p&gt;© 2023 Company Name&lt;/p&gt;\n&lt;/footer&gt;",
+        syntax: "&lt;footer style='background:#333; color:white; padding:10px; text-align:center;'&gt;\n  &lt;p&gt;© 2025 HTML Tutorial&lt;/p&gt;\n&lt;/footer&gt;",
         preview: "<footer style='background:#333; color:white; padding:10px; text-align:center;'>© 2025 HTML Tutorial</footer>",
         explanation: "The bottom section of your site. Great for copyright notices, contact info, and related links."
     },
@@ -30,23 +32,23 @@ const tagsData = [
         name: "aside",
         category: "Structure",
         desc: "The &lt;aside&gt; element represents a portion of a document whose content is only indirectly related to the document's main content.",
-        syntax: "&lt;aside&gt;\n  &lt;h3&gt;Related Posts&lt;/h3&gt;\n&lt;/aside&gt;",
-        preview: "<div style='display:flex;'><article style='width:70%'>Main Article</article><aside style='width:30%; background:#eee; padding:5px;'>Sidebar/Aside</aside></div>",
+        syntax: "&lt;div style='display:flex;'&gt;\n  &lt;article&gt;Main Article&lt;/article&gt;\n  &lt;aside style='background:#eee; padding:5px;'&gt;Sidebar/Aside&lt;/aside&gt;\n&lt;/div&gt;",
+        preview: "<div style='display:flex; gap:10px;'><article style='flex:1;'>Main Article</article><aside style='background:#eee; padding:5px;'>Sidebar/Aside</aside></div>",
         explanation: "Often used for sidebars, call-out boxes, or advertising. It's 'aside' from the main content."
     },
     {
         name: "article",
         category: "Structure",
         desc: "The &lt;article&gt; element represents a self-contained composition in a document.",
-        syntax: "&lt;article&gt;\n  &lt;h2&gt;Blog Post Title&lt;/h2&gt;\n  &lt;p&gt;Post content...&lt;/p&gt;\n&lt;/article&gt;",
+        syntax: "&lt;article style='border:1px solid #ccc; padding:10px;'&gt;\n  &lt;h2&gt;News Headline&lt;/h2&gt;\n  &lt;p&gt;This is a self-contained news story.&lt;/p&gt;\n&lt;/article&gt;",
         preview: "<article style='border:1px solid #ccc; padding:10px;'><h2>News Headline</h2><p>This is a self-contained news story.</p></article>",
         explanation: "Use this for blog posts, news stories, or forum comments—anything that makes sense on its own."
     },
     {
         name: "section",
         category: "Structure",
-        desc: "The &lt;section&gt; element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it.",
-        syntax: "&lt;section&gt;\n  &lt;h2&gt;Chapter 1&lt;/h2&gt;\n  &lt;p&gt;...&lt;/p&gt;\n&lt;/section&gt;",
+        desc: "The &lt;section&gt; element represents a generic standalone section of document.",
+        syntax: "&lt;section style='border:1px solid blue; padding:10px;'&gt;\n  &lt;h2&gt;Section Heading&lt;/h2&gt;\n  &lt;p&gt;Content for this specific section.&lt;/p&gt;\n&lt;/section&gt;",
         preview: "<section style='border:1px solid blue; padding:10px;'><h2>Section Heading</h2><p>Content for this specific section.</p></section>",
         explanation: "A way to group related content together, like chapters in a book."
     },
@@ -54,7 +56,7 @@ const tagsData = [
         name: "div",
         category: "Structure",
         desc: "The &lt;div&gt; (division) element is the generic container for flow content.",
-        syntax: "&lt;div class='box'&gt;\n  Content here...\n&lt;/div&gt;",
+        syntax: "&lt;div style='background:lightblue; padding:20px; text-align:center;'&gt;\n  I am a generic DIV container\n&lt;/div&gt;",
         preview: "<div style='background:lightblue; padding:20px; text-align:center;'>I am a generic DIV container</div>",
         explanation: "The ultimate 'box'. It has no meaning on its own but is used everywhere to group elements for styling."
     },
@@ -64,31 +66,31 @@ const tagsData = [
         name: "p",
         category: "Text",
         desc: "The &lt;p&gt; element represents a paragraph.",
-        syntax: "&lt;p&gt;This is a paragraph of text.&lt;/p&gt;",
-        preview: "<p>This is a paragraph. Browsers automatically add some space (margin) before and after it.</p>",
+        syntax: "&lt;p&gt;This is a paragraph. Browsers automatically add some space.&lt;/p&gt;",
+        preview: "<p>This is a paragraph. Browsers automatically add some space.</p>",
         explanation: "The most common tag for regular text blocks."
     },
     {
         name: "span",
         category: "Text",
         desc: "The &lt;span&gt; element is a generic inline container for phrasing content.",
-        syntax: "&lt;p&gt;This is &lt;span style='color:red'&gt;red&lt;/span&gt; text.&lt;/p&gt;",
-        preview: "<p>This is normal text, but <span style='color:red; font-weight:bold;'>this part is in a span</span>.</p>",
+        syntax: "&lt;p&gt;Normal text, &lt;span style='color:red; font-weight:bold;'&gt;span text&lt;/span&gt;.&lt;/p&gt;",
+        preview: "<p>Normal text, <span style='color:red; font-weight:bold;'>span text</span>.</p>",
         explanation: "Like <div> but for small optimizations inside a line of text. Good for coloring specific words."
     },
     {
         name: "br",
         category: "Text",
         desc: "The &lt;br&gt; element produces a line break in text (carriage-return).",
-        syntax: "First Line&lt;br&gt;\nSecond Line",
-        preview: "First line of text.<br>Second line of text (forced by &lt;br&gt;).",
+        syntax: "First line.&lt;br&gt;\nSecond line (forced by br).",
+        preview: "First line.<br>Second line (forced by br).",
         explanation: "Forces text to drop to the next line without starting a new paragraph."
     },
     {
         name: "hr",
         category: "Text",
         desc: "The &lt;hr&gt; element represents a thematic break between paragraph-level elements.",
-        syntax: "&lt;p&gt;Topic A&lt;/p&gt;\n&lt;hr&gt;\n&lt;p&gt;Topic B&lt;/p&gt;",
+        syntax: "&lt;p&gt;Section 1&lt;/p&gt;\n&lt;hr&gt;\n&lt;p&gt;Section 2&lt;/p&gt;",
         preview: "<p>Section 1</p><hr><p>Section 2</p>",
         explanation: "Draws a horizontal line. Good for separating chapters or topics."
     },
@@ -96,7 +98,7 @@ const tagsData = [
         name: "b / strong",
         category: "Text",
         desc: "&lt;b&gt; is for bold text stylistically. &lt;strong&gt; is for important text (bold).",
-        syntax: "&lt;b&gt;Bold&lt;/b&gt; vs &lt;strong&gt;Strong&lt;/strong&gt;",
+        syntax: "This is &lt;b&gt;bold text&lt;/b&gt;. This is &lt;strong&gt;strong text&lt;/strong&gt;.",
         preview: "This is <b>bold text</b>. This is <strong>strong text</strong>.",
         explanation: "Both make text fat. Use <strong> when the word is actually important."
     },
@@ -104,7 +106,7 @@ const tagsData = [
         name: "i / em",
         category: "Text",
         desc: "&lt;i&gt; is for italic text. &lt;em&gt; is for emphasized text.",
-        syntax: "&lt;i&gt;Italic&lt;/i&gt; vs &lt;em&gt;Emphasis&lt;/em&gt;",
+        syntax: "This is &lt;i&gt;italic&lt;/i&gt;. This is &lt;em&gt;emphasized&lt;/em&gt;.",
         preview: "This is <i>italic</i>. This is <em>emphasized</em>.",
         explanation: "Both slant the text. Use <em> for things you'd stress in speech."
     },
@@ -115,58 +117,22 @@ const tagsData = [
         category: "Formatting",
         desc: "Subscript (&lt;sub&gt;) and Superscript (&lt;sup&gt;).",
         syntax: "H&lt;sub&gt;2&lt;/sub&gt;O and E=mc&lt;sup&gt;2&lt;/sup&gt;",
-        preview: "Water is H<sub>2</sub>O. Einstein said E=mc<sup>2</sup>.",
+        preview: "H<sub>2</sub>O and E=mc<sup>2</sup>",
         explanation: "Small letters below or above the line. Used for math and chemicals."
     },
     {
         name: "code",
         category: "Formatting",
         desc: "The &lt;code&gt; element displays a short fragment of computer code.",
-        syntax: "&lt;p&gt;Type &lt;code&gt;npm install&lt;/code&gt; to start.&lt;/p&gt;",
-        preview: "<p>Please run <code>console.log('Hello')</code> in your browser.</p>",
+        syntax: "&lt;p&gt;Please run &lt;code&gt;console.log('Hello')&lt;/code&gt;&lt;/p&gt;",
+        preview: "<p>Please run <code>console.log('Hello')</code></p>",
         explanation: "Shows text in a 'robot' font (monospace) to look like computer code."
     },
-
-    // --- Media & Links ---
-    {
-        name: "a",
-        category: "Media",
-        desc: "The &lt;a&gt; (anchor) element defines a hyperlink.",
-        syntax: "&lt;a href='https://google.com'&gt;Go to Google&lt;/a&gt;",
-        preview: "<a href='#' onclick='alert(\"You clicked a link!\"); return false;'>Click Me!</a>",
-        explanation: "The magic tag that connects the web. Wraps text to make it clickable."
-    },
-    {
-        name: "img",
-        category: "Media",
-        desc: "The &lt;img&gt; element embeds an image into the document.",
-        syntax: "&lt;img src='image.jpg' alt='Description'&gt;",
-        preview: "<div style='background:#ddd; width:100px; height:30px; display:flex; align-items:center; justify-content:center;'>[Image]</div>",
-        explanation: "Puts a picture on the page. Needs a 'src' (source) link to work."
-    },
-    {
-        name: "video",
-        category: "Media",
-        desc: "The &lt;video&gt; element embeds a media player which supports video playback.",
-        syntax: "&lt;video src='movie.mp4' controls&gt;&lt;/video&gt;",
-        preview: "<div style='background:black; color:white; width:200px; height:80px; display:flex; align-items:center; justify-content:center;'>[Video]</div>",
-        explanation: "A built-in video player. You can add play/pause buttons with the 'controls' attribute."
-    },
-    {
-        name: "marquee",
-        category: "Media",
-        desc: "The &lt;marquee&gt; element creates a scrolling text effect. (Deprecated but fun!)",
-        syntax: "&lt;marquee&gt;Scroll me!&lt;/marquee&gt;",
-        preview: "<marquee direction='left' style='background:#eee; padding:5px;'>I am scrolling text! This is old school internet.</marquee>",
-        explanation: "Makes text move across the screen. Don't use this on serious websites anymore!"
-    },
-
-    // --- More Formatting ---
     {
         name: "u / s / del",
         category: "Formatting",
         desc: "&lt;u&gt; is underline, &lt;s&gt; is strikethrough, &lt;del&gt; is deleted text.",
-        syntax: "&lt;u&gt;Underline&lt;/u&gt;, &lt;s&gt;Strike&lt;/s&gt;, &lt;del&gt;Deleted&lt;/del&gt;",
+        syntax: "&lt;u&gt;Underline&lt;/u&gt; &lt;s&gt;Strikethrough&lt;/s&gt; &lt;del&gt;Deleted&lt;/del&gt;",
         preview: "<u>Underline</u> <s>Strikethrough</s> <del>Deleted</del>",
         explanation: "Different ways to mark text as removed or highlighted directly."
     },
@@ -174,7 +140,7 @@ const tagsData = [
         name: "pre",
         category: "Formatting",
         desc: "The &lt;pre&gt; element defines preformatted text.",
-        syntax: "&lt;pre&gt;\n  Text    keep    spaces\n&lt;/pre&gt;",
+        syntax: "&lt;pre style='background:#eee; border:1px solid #999;'&gt;\n  This text    keeps\n  all its    spacing.\n&lt;/pre&gt;",
         preview: "<pre style='background:#eee; border:1px solid #999;'>  This text    keeps\n  all its    spacing.</pre>",
         explanation: "Preserves your spaces and line breaks exactly as you type them."
     },
@@ -182,41 +148,75 @@ const tagsData = [
         name: "q / cite / abbr",
         category: "Formatting",
         desc: "Quotes &lt;q&gt;, Citations &lt;cite&gt;, Abbreviations &lt;abbr&gt;.",
-        syntax: "&lt;q&gt;Quote&lt;/q&gt; by &lt;cite&gt;Author&lt;/cite&gt;. &lt;abbr title='HyperText Markup Language'&gt;HTML&lt;/abbr&gt;",
-        preview: "<q>To be or not to be</q> by <cite>Shakespeare</cite>.<br>I love <abbr title='HyperText Markup Language' style='border-bottom:1px dotted black;'>HTML</abbr>.",
+        syntax: "&lt;q&gt;To be&lt;/q&gt; by &lt;cite&gt;Shakespeare&lt;/cite&gt;.<br>I love &lt;abbr title='HyperText Markup Language'&gt;HTML&lt;/abbr&gt;.",
+        preview: "<q>To be</q> by <cite>Shakespeare</cite>.<br>I love <abbr title='HyperText Markup Language' style='border-bottom:1px dotted black; cursor:help;'>HTML</abbr>.",
         explanation: "Semantic tags for quotes and references."
+    },
+    {
+        name: "tt",
+        category: "Formatting",
+        desc: "The &lt;tt&gt; element creates teletype (monospaced) text. (Obsolete).",
+        syntax: "This is normal. &lt;tt&gt;This is Teletype text.&lt;/tt&gt;",
+        preview: "This is normal. <tt>This is Teletype text.</tt>",
+        explanation: "Old way to make text look like a typewriter. Modern websites use CSS or the &lt;code&gt; tag."
+    },
+
+    // --- Media & Links ---
+    {
+        name: "a",
+        category: "Media",
+        desc: "The &lt;a&gt; (anchor) element defines a hyperlink.",
+        syntax: "&lt;a href='#' onclick='alert(\"Clicked!\")'&gt;Click Me!&lt;/a&gt;",
+        preview: "<a href='#' onclick='alert(\"You clicked a link!\"); return false;'>Click Me!</a>",
+        explanation: "The magic tag that connects the web. Wraps text to make it clickable."
+    },
+    {
+        name: "img",
+        category: "Media",
+        desc: "The &lt;img&gt; element embeds an image into the document.",
+        syntax: "&lt;img src='https://via.placeholder.com/100x50' alt='Placeholder'&gt;",
+        preview: "<div style='display:flex; align-items:center; gap:10px;'><img src='https://via.placeholder.com/100x50' alt='Placeholder'> <span>(Image loaded from URL)</span></div>",
+        explanation: "Puts a picture on the page. Needs a 'src' (source) link to work."
+    },
+    {
+        name: "video",
+        category: "Media",
+        desc: "The &lt;video&gt; element embeds a media player.",
+        syntax: "&lt;video src='movie.mp4' controls width='200'&gt;&lt;/video&gt;",
+        preview: "<div style='background:black; color:white; width:200px; height:120px; display:flex; align-items:center; justify-content:center; border:2px solid #555;'>[Video Player]</div>",
+        explanation: "A built-in video player. Added a placeholder here since we don't have a real video file."
     },
     {
         name: "audio",
         category: "Media",
         desc: "The &lt;audio&gt; element is used to embed sound content.",
         syntax: "&lt;audio src='sound.mp3' controls&gt;&lt;/audio&gt;",
-        preview: "<div style='background:#f4f4f4; padding:10px; border-radius:20px; text-align:center;'>[ Audio Player Controls ]</div>",
+        preview: "<div style='background:#f4f4f4; padding:10px; border-radius:20px; width:250px; text-align:center; border:1px solid #ccc;'>▶ 🔊 [Audio Controls]</div>",
         explanation: "Like video, but for sound only."
     },
     {
-        name: "tt",
-        category: "Formatting",
-        desc: "The &lt;tt&gt; element creates teletype (monospaced) text. (Obsolete, use &lt;code&gt; instead).",
-        syntax: "&lt;tt&gt;Teletype Text&lt;/tt&gt;",
-        preview: "This is normal. <tt>This is Teletype text.</tt>",
-        explanation: "Old way to make text look like a typewriter. Modern websites use CSS or the &lt;code&gt; tag."
+        name: "marquee",
+        category: "Media",
+        desc: "The &lt;marquee&gt; element creates a scrolling text effect.",
+        syntax: "&lt;marquee direction='left' style='background:#eee; padding:5px;'&gt;\n  I am scrolling text!\n&lt;/marquee&gt;",
+        preview: "<marquee direction='left' style='background:#eee; padding:5px;'>I am scrolling text!</marquee>",
+        explanation: "Makes text move across the screen. Don't use this on serious websites anymore!"
     },
     {
         name: "link",
-        category: "Structure",
-        desc: "The &lt;link&gt; element defines a link between a document and an external resource (like a CSS file).",
+        category: "Media",
+        desc: "The &lt;link&gt; element defines a link between a document and an external resource.",
         syntax: "&lt;link rel='stylesheet' href='style.css'&gt;",
-        preview: "<div style='background:#ddd; padding:10px; text-align:center; color:#555;'>[Invisible Tag] <br> Loads style.css or icons in the background.</div>",
-        explanation: "You don't see this on the page. It goes in the &lt;head&gt; to tell the browser to load things like your style sheet."
+        preview: "<div style='background:#f9f9f9; border:1px solid #ccc; padding:10px; text-align:center; color:#555;'>[Invisible Tag]<br>Functions in the &lt;head&gt;</div>",
+        explanation: "You don't see this on the page body. It loads valid resources like CSS styles."
     },
 
     // --- Forms & Inputs ---
     {
         name: "form",
         category: "Forms",
-        desc: "The &lt;form&gt; element represents a document section containing interactive controls for submitting information.",
-        syntax: "&lt;form action='/submit'&gt;\n  &lt;!-- inputs go here --&gt;\n&lt;/form&gt;",
+        desc: "The &lt;form&gt; element represents a document section for interactive controls.",
+        syntax: "&lt;form style='border:1px dashed #333; padding:10px;'&gt;\n  &lt;!-- inputs go here --&gt;\n  Form Container\n&lt;/form&gt;",
         preview: "<form style='border:1px dashed #333; padding:10px;'>Form Container</form>",
         explanation: "The wrapper for all your input fields. It handles sending the data to the server."
     },
@@ -224,15 +224,15 @@ const tagsData = [
         name: "button",
         category: "Forms",
         desc: "The &lt;button&gt; element is a clickable button.",
-        syntax: "&lt;button&gt;Click Me&lt;/button&gt;",
+        syntax: "&lt;button style='padding:5px 10px;'&gt;I am a Button&lt;/button&gt;",
         preview: "<button style='padding:5px 10px;'>I am a Button</button>",
         explanation: "A standard clickable button. Can submit forms or trigger JavaScript."
     },
     {
         name: "select / option",
         category: "Forms",
-        desc: "New dropdown menu. &lt;select&gt; creates the list, &lt;option&gt; items.",
-        syntax: "&lt;select&gt;\n  &lt;option&gt;A&lt;/option&gt;\n  &lt;option&gt;B&lt;/option&gt;\n&lt;/select&gt;",
+        desc: "Dropdown menu.",
+        syntax: "&lt;select&gt;\n  &lt;option&gt;Option 1&lt;/option&gt;\n  &lt;option&gt;Option 2&lt;/option&gt;\n&lt;/select&gt;",
         preview: "<select><option>Option 1</option><option>Option 2</option></select>",
         explanation: "Creates a dropdown list for users to choose from."
     },
@@ -240,7 +240,7 @@ const tagsData = [
         name: "input type='text'",
         category: "Forms",
         desc: "Standard single-line text input.",
-        syntax: "&lt;input type='text' placeholder='Name'&gt;",
+        syntax: "&lt;input type='text' placeholder='Type name here'&gt;",
         preview: "<input type='text' placeholder='Type name here'>",
         explanation: "The most basic input field for text."
     },
@@ -248,15 +248,15 @@ const tagsData = [
         name: "input type='password'",
         category: "Forms",
         desc: "Text input that hides characters.",
-        syntax: "&lt;input type='password'&gt;",
+        syntax: "&lt;input type='password' placeholder='Password'&gt;",
         preview: "<input type='password' placeholder='Password'>",
         explanation: "Hides what you type with dots or asterisks."
     },
     {
         name: "input type='email'",
         category: "Forms",
-        desc: "Input for email addresses. Validates format.",
-        syntax: "&lt;input type='email'&gt;",
+        desc: "Input for email addresses.",
+        syntax: "&lt;input type='email' placeholder='user@example.com'&gt;",
         preview: "<input type='email' placeholder='user@example.com'>",
         explanation: "Looks like text, but on mobile it shows the '@' key."
     },
@@ -264,7 +264,7 @@ const tagsData = [
         name: "input type='number'",
         category: "Forms",
         desc: "Input for numeric values.",
-        syntax: "&lt;input type='number' min='1' max='10'&gt;",
+        syntax: "&lt;input type='number' placeholder='123'&gt;",
         preview: "<input type='number' placeholder='123'>",
         explanation: "Only accepts numbers. Often has up/down spinner arrows."
     },
@@ -280,15 +280,15 @@ const tagsData = [
         name: "input type='checkbox'",
         category: "Forms",
         desc: "A tick box for binary choices.",
-        syntax: "&lt;input type='checkbox' id='c'&gt; &lt;label for='c'&gt;Check me&lt;/label&gt;",
-        preview: "<input type='checkbox'> Check me",
+        syntax: "&lt;label&gt;&lt;input type='checkbox'&gt; Check me&lt;/label&gt;",
+        preview: "<label><input type='checkbox'> Check me</label>",
         explanation: "For 'yes/no' options. You can select multiple checkboxes."
     },
     {
         name: "input type='radio'",
         category: "Forms",
         desc: "Radio button for selecting one option from a set.",
-        syntax: "&lt;input type='radio' name='g'&gt; A &lt;input type='radio' name='g'&gt; B",
+        syntax: "&lt;input type='radio' name='grp'&gt; A &lt;input type='radio' name='grp'&gt; B",
         preview: "<input type='radio' name='grp'> Option A <input type='radio' name='grp'> Option B",
         explanation: "Like checkboxes, but you can only pick ONE from the group."
     },
@@ -304,7 +304,7 @@ const tagsData = [
         name: "input type='range'",
         category: "Forms",
         desc: "A slider control.",
-        syntax: "&lt;input type='range' min='0' max='100'&gt;",
+        syntax: "&lt;input type='range'&gt;",
         preview: "<input type='range'>",
         explanation: "A slider to dragging select a value within a range."
     },
@@ -320,7 +320,7 @@ const tagsData = [
         name: "input type='search'",
         category: "Forms",
         desc: "Text field optimized for search.",
-        syntax: "&lt;input type='search'&gt;",
+        syntax: "&lt;input type='search' placeholder='Search...'&gt;",
         preview: "<input type='search' placeholder='Search...'>",
         explanation: "Like text, but may have a clear (X) button."
     },
@@ -328,7 +328,7 @@ const tagsData = [
         name: "input type='url'",
         category: "Forms",
         desc: "Input for web addresses.",
-        syntax: "&lt;input type='url'&gt;",
+        syntax: "&lt;input type='url' placeholder='https://...'&gt;",
         preview: "<input type='url' placeholder='https://...'>",
         explanation: "Validates that the text is a link."
     },
@@ -336,16 +336,15 @@ const tagsData = [
         name: "input type='tel'",
         category: "Forms",
         desc: "Input for telephone numbers.",
-        syntax: "&lt;input type='tel'&gt;",
+        syntax: "&lt;input type='tel' placeholder='123-456-7890'&gt;",
         preview: "<input type='tel' placeholder='123-456-7890'>",
         explanation: "Brings up the number pad on mobile keyboards."
     },
-    // Adding remaining types from request: submit, reset, month, week, fieldset/legend (implied by context usually but good to have)
     {
         name: "input type='submit'",
         category: "Forms",
         desc: "Submit button for forms.",
-        syntax: "&lt;input type='submit' value='Send'&gt;",
+        syntax: "&lt;input type='submit' value='Submit Form'&gt;",
         preview: "<input type='submit' value='Submit Form'>",
         explanation: "A button that submits the form data."
     },
@@ -353,9 +352,85 @@ const tagsData = [
         name: "input type='reset'",
         category: "Forms",
         desc: "Reset button for forms.",
-        syntax: "&lt;input type='reset' value='Clear'&gt;",
+        syntax: "&lt;input type='reset' value='Reset Form'&gt;",
         preview: "<input type='reset' value='Reset Form'>",
         explanation: "A button that clears all form inputs."
+    },
+
+    // --- Tables ---
+    {
+        name: "table",
+        category: "Tables",
+        desc: "The &lt;table&gt; element creates a table to display data.",
+        syntax: "&lt;table border='1' cellpadding='5'&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Row 1&lt;/td&gt;\n    &lt;td&gt;Data&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;",
+        preview: "<table border='1' cellpadding='5'><tr><td>Row 1</td><td>Data</td></tr></table>",
+        explanation: "The main container for your table. Use other tags inside it to make rows and columns."
+    },
+    {
+        name: "tr (Table Row)",
+        category: "Tables",
+        desc: "The &lt;tr&gt; element defines a row of cells in a table.",
+        syntax: "&lt;table border='1'&gt;\n  &lt;tr&gt;\n    &lt;td&gt;I am in a Row&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;",
+        preview: "<table border='1'><tr><td>I am in a Row</td></tr></table>",
+        explanation: "Every new horizontal line in your table starts with this tag."
+    },
+    {
+        name: "td (Table Data)",
+        category: "Tables",
+        desc: "The &lt;td&gt; element defines a standard data cell.",
+        syntax: "&lt;table border='1'&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Cell 1&lt;/td&gt;\n    &lt;td&gt;Cell 2&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;",
+        preview: "<table border='1'><tr><td>Cell 1</td><td>Cell 2</td></tr></table>",
+        explanation: "The actual box where you put your text or images inside a row."
+    },
+    {
+        name: "th (Table Header)",
+        category: "Tables",
+        desc: "The &lt;th&gt; element defines a header cell.",
+        syntax: "&lt;table border='1'&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Bold Title&lt;/th&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Normal Data&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;",
+        preview: "<table border='1'><tr><th>Bold Title</th></tr><tr><td>Normal Data</td></tr></table>",
+        explanation: "Like a 'td' but bold and centered. Use it for column titles."
+    },
+    {
+        name: "caption",
+        category: "Tables",
+        desc: "The &lt;caption&gt; element adds a title to the table.",
+        syntax: "&lt;table border='1'&gt;\n  &lt;caption&gt;Monthly Savings&lt;/caption&gt;\n  &lt;tr&gt;\n    &lt;td&gt;$100&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;",
+        preview: "<table border='1'><caption>Monthly Savings</caption><tr><td>$100</td></tr></table>",
+        explanation: "A label that sits right above the table."
+    },
+    {
+        name: "thead / tbody / tfoot",
+        category: "Tables",
+        desc: "Groups for Header, Body, and Footer content.",
+        syntax: "&lt;table border='1'&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;&lt;th&gt;Head&lt;/th&gt;&lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;&lt;td&gt;Body&lt;/td&gt;&lt;/tr&gt;\n  &lt;/tbody&gt;\n  &lt;tfoot&gt;\n    &lt;tr&gt;&lt;td&gt;Foot&lt;/td&gt;&lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;",
+        preview: "<table border='1'><thead><tr><th>Head</th></tr></thead><tbody><tr><td>Body</td></tr></tbody><tfoot><tr><td>Foot</td></tr></tfoot></table>",
+        explanation: "Helps organize big tables. Browsers can scroll the body while keeping the head fixed (with CSS)."
+    },
+    {
+        name: "colspan / rowspan",
+        category: "Tables",
+        desc: "Attributes to merge cells across columns or rows.",
+        syntax: "&lt;table border='1'&gt;\n  &lt;tr&gt;\n    &lt;td colspan='2' style='background:#ccc'&gt;Spans 2 Cols&lt;/td&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;",
+        preview: "<table border='1'><tr><td colspan='2' style='background:#ccc'>Spans 2 Cols</td></tr><tr><td>A</td><td>B</td></tr></table>",
+        explanation: "Use 'colspan' to stretch a cell wide, and 'rowspan' to stretch it tall."
+    },
+
+    // --- Concepts ---
+    {
+        name: "HTML 4.1 vs 5.0",
+        category: "Concepts",
+        desc: "The evolution of the standard.",
+        syntax: "&lt;!-- HTML 4 --&gt;\n&lt;div id='header'&gt;...&lt;/div&gt;\n\n&lt;!-- HTML 5 (Modern) --&gt;\n&lt;header&gt;...&lt;/header&gt;\n&lt;nav&gt;...&lt;/nav&gt;",
+        preview: "<div style='font-family:sans-serif;'><strong>HTML 5</strong> introduced semantic tags like <code>&lt;article&gt;</code> and <code>&lt;nav&gt;</code> to replace generic <code>&lt;div&gt;</code> soup.</div>",
+        explanation: "HTML5 is the modern version. It added support for video, audio, and cleaner code structures compared to the older 4.01."
+    },
+    {
+        name: "Block vs Inline",
+        category: "Concepts",
+        desc: "How elements occupy space on the page.",
+        syntax: "&lt;div style='background:salmon; padding:5px; margin-bottom:5px; color:white;'&gt;\n  I am Block (starts new line)\n&lt;/div&gt;\n&lt;span style='background:lightblue; padding:2px; color:black;'&gt;\n  I am Inline\n&lt;/span&gt;\n&lt;span style='background:lightgreen; padding:2px; color:black;'&gt;\n  Me too\n&lt;/span&gt;",
+        preview: "<div style='background:salmon; padding:5px; margin-bottom:5px; color:white;'>I am Block (starts new line)</div><span style='background:lightblue; padding:2px; color:black;'>I am Inline</span> <span style='background:lightgreen; padding:2px; color:black;'>Me too</span>",
+        explanation: "<b>Block</b> elements (like &lt;div&gt;) take up the full width and start a new line. <b>Inline</b> elements (like &lt;span&gt;) only take as much width as they need and stay on the same line."
     }
 ];
 
