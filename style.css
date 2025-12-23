@@ -165,26 +165,47 @@ h3.section-title {
 .code-block {
     margin-bottom: 1rem;
     position: relative;
-    /* Anchor for copy button */
+    border: 2px solid #588157;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Contains the children */
+}
+
+.code-header {
+    background-color: #2f463a;
+    /* Slightly darker than editor or matching navbar accent */
+    color: #dad7cd;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #588157;
+}
+
+.code-lang {
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
 }
 
 .copy-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
+    background: transparent;
+    border: 1px solid rgba(218, 215, 205, 0.3);
     color: #dad7cd;
     cursor: pointer;
     font-size: 0.8rem;
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 4px;
-    transition: background 0.3s;
-    z-index: 5;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #dad7cd;
 }
 
 .code-editor {
@@ -195,15 +216,22 @@ h3.section-title {
     color: #dad7cd;
     /* Light text */
     padding: 1rem;
-    border-radius: 8px;
-    border: 2px solid #588157;
+    border: none;
+    /* Border is handled by container */
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 0.95rem;
     resize: vertical;
     outline: none;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: relative;
-    /* Context for suggestions if needed */
+    display: block;
+    /* Removes bottom whitespace gap */
+}
+
+.code-footer {
+    background-color: #2f463a;
+    border-top: 1px solid #588157;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .code-wrapper {
@@ -247,17 +275,20 @@ h3.section-title {
     background-color: #588157;
     color: #fff;
     border: none;
-    padding: 0.8rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-top: 0.5rem;
+    margin-top: 0;
+    /* Removing margin as it is in footer */
     transition: background 0.3s, transform 0.1s;
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
+
 
 .run-btn:hover {
     background-color: #3a5a40;

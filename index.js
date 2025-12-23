@@ -773,10 +773,22 @@ function loadContent(item) {
             <h3 class="section-title">Syntax Example (Editable)</h3>
             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.8;">Edit the code below and click "Run Code" to see changes.</p>
             
-            <div class="code-block" style="border-left:none; padding:0;">
-                <button id="copy-btn" class="copy-btn">Copy</button>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-lang">${currentMode.toUpperCase()}</span>
+                    <button id="copy-btn" class="copy-btn">
+                        <span class="copy-icon">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                        </span> Copy
+                    </button>
+                </div>
                 <textarea id="code-editor" class="code-editor" spellcheck="false">${item.preview}</textarea>
-                <button id="run-btn" class="run-btn">▶ Run Code</button>
+                <div class="code-footer">
+                    <button id="run-btn" class="run-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Run Code
+                    </button>
+                </div>
             </div>
             
             <h3 class="section-title">Live Preview</h3>
@@ -814,13 +826,19 @@ function loadContent(item) {
         if (copyBtn) {
             copyBtn.addEventListener('click', () => {
                 navigator.clipboard.writeText(editor.value).then(() => {
-                    const originalText = copyBtn.textContent;
-                    copyBtn.textContent = 'Copied!';
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<span class="copy-icon"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Copied!';
                     copyBtn.style.background = 'rgba(88, 129, 87, 0.8)';
+                    copyBtn.style.borderColor = '#dad7cd';
+
                     setTimeout(() => {
-                        copyBtn.textContent = originalText;
+                        copyBtn.innerHTML = originalHTML;
                         copyBtn.style.background = '';
+                        copyBtn.style.borderColor = '';
                     }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy mode: ', err);
+                    copyBtn.textContent = 'Error';
                 });
             });
         }
